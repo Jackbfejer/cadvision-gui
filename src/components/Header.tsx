@@ -1,4 +1,7 @@
+'use client'
+
 import React from 'react'
+import Image from 'next/image'
 import { FaBell, FaQuestionCircle } from 'react-icons/fa'
 
 export default function Header() {
@@ -11,7 +14,17 @@ export default function Header() {
               {/* Mobile menu button would go here */}
             </div>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center space-x-4">
+            <div className="flex-shrink-0">
+              <Image
+                src="/logo.png"
+                alt="CADVision Logo"
+                width={120}
+                height={40}
+                className="h-8 w-auto"
+                priority
+              />
+            </div>
             <button
               type="button"
               className="p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
@@ -22,7 +35,7 @@ export default function Header() {
 
             <button
               type="button"
-              className="ml-3 p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              className="p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
               <span className="sr-only">View notifications</span>
               <FaBell className="h-6 w-6" />
